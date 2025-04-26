@@ -5,7 +5,6 @@ from keras.models import load_model
 from flask import Flask, request, jsonify
 from werkzeug.utils import secure_filename
 from flask_cors import CORS
-from pygame import mixer
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -23,9 +22,7 @@ drowsiness_model = load_model('cnnfinal.h5')
 # Labels for classification
 labels = ['Close', 'Open']
 
-# Initialize sound mixer
-mixer.init()
-alarm_sound = mixer.Sound('alarm.wav')
+
 
 # Ensure an upload folder exists
 UPLOAD_FOLDER = 'uploads'
